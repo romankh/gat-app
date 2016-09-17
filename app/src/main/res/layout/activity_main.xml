@@ -1,0 +1,104 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        tools:context="at.khassraf.gat.app.MainActivity"
+    android:padding="15dp">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Server Mode"
+        android:id="@+id/buttonServermode"
+        android:layout_marginTop="15dp"
+        android:minWidth="150dp"
+        android:onClick="buttonServerModeClicked" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Class 0 SMS"
+                android:id="@+id/buttonClass0"
+                android:onClick="buttonClass0Clicked"
+                android:minWidth="150dp" />
+
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Type 0 SMS"
+                    android:id="@+id/buttonType0"
+                    android:minWidth="150dp"
+                android:onClick="buttonType0Clicked" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Type 0 Ping"
+                    android:id="@+id/buttonType0Ping"
+                    android:minWidth="150dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="buttonType0PingClicked" />
+
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MWI Ping"
+                    android:id="@+id/buttonMWIPing"
+                    android:singleLine="false"
+                    android:minWidth="150dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="buttonMWIPingClicked" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MWI Activate"
+                    android:id="@+id/buttonMWIActivate"
+                    android:minWidth="150dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="buttonMWIActivateClicked" />
+
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MWI Deactivate"
+                    android:id="@+id/buttonMWIDeactivate"
+                    android:minWidth="150dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="buttonMWIDeactivateClicked" />
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test TM"
+        android:id="@+id/buttonTMEval"
+        android:onClick="buttonTMEvalClicked" />
+</LinearLayout>
+

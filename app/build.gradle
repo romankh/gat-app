@@ -1,0 +1,28 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 18
+    buildToolsVersion "21.1.2"
+    defaultConfig {
+        applicationId 'at.khassraf.gat.app'
+        minSdkVersion 10
+        targetSdkVersion 18
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    productFlavors {
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    provided files('XposedBridgeApi-54.jar')
+    compile 'com.android.support:appcompat-v7:18.+'
+    compile 'com.android.support:support-v4:18.+'
+    provided files('telephony_dex2jar.jar')
+}

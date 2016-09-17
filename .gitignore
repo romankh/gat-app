@@ -1,0 +1,9 @@
+*.iml
+.directory
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+/build
+*/XposedBridgeApi-54.jar
+*/telephony_dex2jar.jar

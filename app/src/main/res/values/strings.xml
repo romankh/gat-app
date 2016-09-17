@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="action_settings">Settings</string>
+    <string name="app_name">GAT-App</string>
+    <string name="title_activity_main">GAT-App</string>
+    <string name="main_choose_mode">Choose mode:</string>
+    <string name="main_button_manual">Manual mode</string>
+    <string name="main_button_server">Server mode</string>
+    <string name="title_activity_manual_main">GAT-App - Manual mode</string>
+    <string name="title_activity_send_class0">GAT-App - Send Class 0</string>
+    <string name="title_activity_send_messageless_sms">SendMessagelessSMSActivity</string>
+    <string name="title_activity_send_type0">GAT-App - Send Type 0</string>
+    <string name="title_activity_send_type0Ping">GAT-App - Send Type 0 Ping</string>
+    <string name="title_activity_send_MWIPing">GAT-App - Send MWI Ping</string>
+    <string name="title_activity_send_MWI_Activate">GAT-App - Send MWI Activate</string>
+    <string name="title_activity_send_MWI_Dectivate">GAT-App - Send MWI Deactivate</string>
+    <string name="title_activity_server_mode">GAT-App - Server Mode</string>
+
+</resources>
