@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    tools:context="at.khassraf.gat.app.NetworkInfoActivity"
+    android:padding="15dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewHeaderGeneral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="General Info"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10sp"/>
+
+        <TextView
+            android:id="@+id/textViewLabelPhoneNr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Phone Nr."
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/textViewPhoneNr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textIsSelectable="true"
+            android:text="+43 666 1324 4567" />
+
+        <TextView
+            android:id="@+id/textViewLabelImsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="IMSI"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/textViewImsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textIsSelectable="true"
+            android:text="23201123456789" />
+
+        <TextView
+            android:id="@+id/textViewLabelImei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="IMEI"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/textViewImei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textIsSelectable="true"
+            android:text="12345687978987897" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" android:layout_marginTop="10sp">
+
+        <TextView
+            android:id="@+id/textViewHeaderNetwork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Network Info"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10sp"
+            android:layout_marginBottom="10sp"/>
+
+        <TextView
+            android:id="@+id/textViewLabelMccMnc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="MCC / MNC"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/textViewMccMnc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textIsSelectable="true"
+            android:text="232 / 01" />
+        <TextView
+            android:id="@+id/textViewLabelNetworkType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Network Type"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/textViewNetworkType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textIsSelectable="true"
+            android:text="GSM" />
+
+        <TextView
+            android:id="@+id/textViewLabelNetworkOperatorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Network Operator Name"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/textViewNetworkOperatorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textIsSelectable="true"
+            android:text="Nice Operator" />
+
+        <TextView
+            android:id="@+id/textViewLabelNetworkCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Network Country"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/textViewNetworkCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textIsSelectable="true"
+            android:text="Country" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" android:layout_marginTop="10sp">
+
+        <TextView
+            android:id="@+id/textViewHeaderSim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SIM Info"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10sp"
+            android:layout_marginBottom="10sp"/>
+
+        <TextView
+            android:id="@+id/textViewLabelSimSerial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SIM Serial Nr."
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/textViewSimSerial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textIsSelectable="true"
+            android:text="12345687978987897" />
+
+        <TextView
+            android:id="@+id/textViewLabelSimOperatorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SIM Operator Name"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/textViewSimOperatorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textIsSelectable="true"
+            android:text="Nice Operator" />
+
+        <TextView
+            android:id="@+id/textViewLabelSimCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SIM Country"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/textViewSimCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textIsSelectable="true"
+            android:text="Country" />
+    </LinearLayout>
+
+</LinearLayout>

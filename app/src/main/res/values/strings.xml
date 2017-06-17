@@ -16,5 +16,5 @@
     <string name="title_activity_send_MWI_Activate">GAT-App - Send MWI Activate</string>
     <string name="title_activity_send_MWI_Dectivate">GAT-App - Send MWI Deactivate</string>
     <string name="title_activity_server_mode">GAT-App - Server Mode</string>
-
+    <string name="title_activity_network_info">GAT-App - Info Screen</string>
 </resources>

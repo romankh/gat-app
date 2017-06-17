@@ -8,15 +8,6 @@
         tools:context="at.khassraf.gat.app.MainActivity"
     android:padding="15dp">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Server Mode"
-        android:id="@+id/buttonServermode"
-        android:layout_marginTop="15dp"
-        android:minWidth="150dp"
-        android:onClick="buttonServerModeClicked" />
-
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,17 +21,42 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Server Mode"
+                android:id="@+id/buttonServermode"
+                android:minWidth="150dp"
+                android:layout_marginTop="10dp"
+                android:onClick="buttonServerModeClicked" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Info Screen"
+                android:id="@+id/buttonInfoScreen"
+                android:minWidth="150dp"
+                android:layout_marginTop="10dp"
+                android:onClick="buttonInfoScreenClicked" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Class 0 SMS"
                 android:id="@+id/buttonClass0"
                 android:onClick="buttonClass0Clicked"
+                android:layout_marginTop="10dp"
                 android:minWidth="150dp" />
 
             <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Type 0 SMS"
-                    android:id="@+id/buttonType0"
-                    android:minWidth="150dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type 0 SMS"
+                android:id="@+id/buttonType0"
+                android:minWidth="150dp"
+                android:layout_marginTop="10dp"
                 android:onClick="buttonType0Clicked" />
 
         </TableRow>
@@ -91,14 +107,6 @@
                     android:layout_marginTop="10dp"
                     android:onClick="buttonMWIDeactivateClicked" />
         </TableRow>
-
     </TableLayout>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Test TM"
-        android:id="@+id/buttonTMEval"
-        android:onClick="buttonTMEvalClicked" />
 </LinearLayout>
 
