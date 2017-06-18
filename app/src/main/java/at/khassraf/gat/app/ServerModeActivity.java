@@ -1,21 +1,20 @@
 /**
  * Copyright (C) 2016 Roman Khassraf.
- *
+ * <p>
  * This file is part of GAT-App.
- *
- *  GAT-App is free software: you can redistribute it and/or modify
+ * <p>
+ * GAT-App is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  GAT-App is distributed in the hope that it will be useful,
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * <p>
+ * GAT-App is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
+ * <p>
  * You should have received a copy of the GNU General Public License
  * along with GAT-App.  If not, see <http://www.gnu.org/licenses/>.
- *
  */
 package at.khassraf.gat.app;
 
@@ -357,43 +356,33 @@ public class ServerModeActivity extends Activity {
 
                     MessageType type = MessageType.values()[typeNr];
                     String typeDesc = "Unknown message type";
-                    String typeId = "666";
                     switch (type) {
                         case SMS:
                             typeDesc = "Default SMS";
-                            typeId = String.valueOf(MessageType.SMS.getValue());
                             break;
                         case SMS_DELIVERY_REPORT:
                             typeDesc = "Default SMS with delivery report";
-                            typeId = String.valueOf(MessageType.SMS.getValue());
                             break;
                         case CLASS0:
                             typeDesc = "Class 0";
-                            typeId = String.valueOf(MessageType.SMS.getValue());
                             break;
                         case CLASS0_DELIVERY_REPORT:
                             typeDesc = "Class 0 with delivery report";
-                            typeId = String.valueOf(MessageType.SMS.getValue());
                             break;
                         case SILENT_TYPE0:
                             typeDesc = "Type 0";
-                            typeId = String.valueOf(MessageType.SMS.getValue());
                             break;
                         case SILENT_TYPE0_DELIVERY_REPORT:
                             typeDesc = "Type 0 Ping";
-                            typeId = String.valueOf(MessageType.SMS.getValue());
                             break;
                         case MWIA:
                             typeDesc = "MWI Activate";
-                            typeId = String.valueOf(MessageType.SMS.getValue());
                             break;
                         case MWID:
                             typeDesc = "MWI Deactivate";
-                            typeId = String.valueOf(MessageType.SMS.getValue());
                             break;
                         case MWID_DELIVERY_REPORT:
                             typeDesc = "MWI Ping";
-                            typeId = String.valueOf(MessageType.SMS.getValue());
                             break;
                         default:
                             break;
@@ -405,10 +394,10 @@ public class ServerModeActivity extends Activity {
                         switch (getResultCode()) {
                             case Activity.RESULT_OK:
                                 try {
-                                    msgQueue.put("sms-status#"  + number + "#OK");
+                                    msgQueue.put("sms-send#" + number + "#OK#");
                                     updateUIOutputHandler.post(
                                             new updateUIOutputThread(
-                                                remoteIp + typeDesc + " sent to " + number
+                                                    remoteIp + typeDesc + " sent to " + number
                                             )
                                     );
                                 } catch (InterruptedException e) {
@@ -417,7 +406,7 @@ public class ServerModeActivity extends Activity {
                                 break;
                             default:
                                 try {
-                                    msgQueue.put("sms-status#"  + number + "#NOK");
+                                    msgQueue.put("sms-send#" + number + "#NOK#");
                                     updateUIOutputHandler.post(
                                             new updateUIOutputThread(
                                                     remoteIp + typeDesc + " not sent to " + number
@@ -447,7 +436,7 @@ public class ServerModeActivity extends Activity {
                         switch (getResultCode()) {
                             case Activity.RESULT_OK:
                                 try {
-                                    msgQueue.put("sms-rcv#" + number);
+                                    msgQueue.put("sms-delivery#" + number + "#OK#");
                                     updateUIOutputHandler.post(
                                             new updateUIOutputThread(
                                                     remoteIp + "Message delivered to " + number
@@ -460,7 +449,7 @@ public class ServerModeActivity extends Activity {
 
                             case Activity.RESULT_CANCELED:
                                 try {
-                                    msgQueue.put("Message not delivered to " + number);
+                                    msgQueue.put("sms-delivery#" + number + "#NOK#");
                                     updateUIOutputHandler.post(
                                             new updateUIOutputThread(
                                                     remoteIp + "Message not delivered to " + number
@@ -473,7 +462,7 @@ public class ServerModeActivity extends Activity {
 
                             default:
                                 try {
-                                    msgQueue.put("Message with unclear status to " + number);
+                                    msgQueue.put("sms-delivery#" + number + "#NOK#");
                                     updateUIOutputHandler.post(
                                             new updateUIOutputThread(
                                                     remoteIp + "Message with unclear status to " + number
