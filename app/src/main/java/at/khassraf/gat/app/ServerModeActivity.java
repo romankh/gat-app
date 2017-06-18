@@ -34,6 +34,7 @@ import android.os.Handler;
 import android.telephony.gsm.SmsManager;
 import android.text.format.Formatter;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Patterns;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -54,6 +55,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.regex.Pattern;
 
 
 public class ServerModeActivity extends Activity {
@@ -314,8 +316,17 @@ public class ServerModeActivity extends Activity {
 
                                     PendingIntent pendingSentIntent = PendingIntent.getBroadcast(context, intentId++, sentIntent, 0);
 
-                                    updateUIOutputHandler.post(new updateUIOutputThread(remoteIp + "Sending..."));
-                                    smsManager.sendTextMessage(phoneNr, null, cmd, pendingSentIntent, pendingDeliveryIntent);
+                                    if (isValidPhoneNr(phoneNr)) {
+                                        updateUIOutputHandler.post(new updateUIOutputThread(remoteIp + "Sending..."));
+                                        smsManager.sendTextMessage(phoneNr, null, cmd, pendingSentIntent, pendingDeliveryIntent);
+                                    } else {
+                                        try {
+                                            updateUIOutputHandler.post(new updateUIOutputThread(remoteIp + "Invalid phone nr"));
+                                            msgQueue.put("sms-send#" + phoneNr + "#NOK#");
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
                                 }
                             }
                         } else if (read.equals("quit")) {
@@ -333,6 +344,10 @@ public class ServerModeActivity extends Activity {
             unregisterReceiver(this.serverSentReceiver);
             unregisterReceiver(this.serverDeliveryReceiver);
             closeSocket();
+        }
+
+        private boolean isValidPhoneNr(String phoneNr) {
+            return !phoneNr.isEmpty() && Patterns.PHONE.matcher(phoneNr).matches();
         }
 
         public void closeSocket() {
