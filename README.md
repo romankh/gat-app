@@ -33,6 +33,7 @@ This can be done using the programs smali and dex2jar, there are several tutoria
 
 ## Usage
 
+### SMS
 Using the GUI for sending messages is pretty straight forward.
 
 To use the app remotely, you have enter _Server Mode_ and tap _Start_. Additionally you can change the preset port if necessary.
@@ -53,6 +54,36 @@ The network protocol accepts two commands
         * **8**: Message Waiting Indicator Deactivate SMS with delivery report
     * **{1}**: MSISDN / phone number of the recipient. Mandatory.
     * **{2}**: text to send. Optional.
+
+When a SMS is successfully transmitted, the server replies with
+* **sms-send#123456789#OK#**
+where 123456789 is the recipient.
+
+If sending the SMS failed, the server replies with
+* **sms-send#123456789#NOK#**
+
+For SMS with delivery report, the server transmits following message when the SMS was successfully delivered:
+* **sms-delivery#123456789#OK#**
+
+In case of a delivery failure the server transmits
+* **sms-delivery#123456789#NOK#**
+
+### Info Screen
+
+This screen provides you with
+
+* phone nr
+* IMSI
+* IMEI
+* Network MCC / MNC
+* Network Type
+* Network Operator
+* Network Country
+* SIM Serial Nr.
+* SIM Operator
+* SIM Country
+
+
 
 ## Contributions
 
